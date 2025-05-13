@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mini Blog</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f8;
+      color: #333;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 2rem auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    input[type="text"], textarea {
+      padding: 0.75rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      resize: vertical;
+    }
+
+    button {
+      padding: 0.75rem;
+      border: none;
+      background-color: #3498db;
+      color: white;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    ul#posts {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 2rem auto;
+    }
+
+    ul#posts li {
+      background: white;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    ul#posts li strong {
+      color: #2c3e50;
+    }
+
+    ul#posts li button {
+      background-color: #e74c3c;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.9rem;
+    }
+
+    ul#posts li button:hover {
+      background-color: #c0392b;
+    }
+  </style>
+</head>
+<body>
+  <h1>📝 Mini Blog</h1>
+  <form id="post-form">
+    <input type="text" id="title" placeholder="Title" required />
+    <textarea id="content" placeholder="Write your message..." rows="4" required></textarea>
+    <button type="submit">➕ Add Post</button>
+  </form>
+  <ul id="posts"></ul>
+
+  <script src="app.js"></script>
+</body>
+</html>
