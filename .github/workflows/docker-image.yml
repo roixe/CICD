@@ -15,7 +15,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the front end Docker image
-      run: docker build . file /frontend/Dockerfile --tag latest:$(date +%s)
+      run: 
+        cd frontend
+        docker build . --file Dockerfile --tag latest:$(date +%s)
     
     - name: Build the Backend Docker image
       run: docker build . file /backend/Dockerfile --tag my-image-name:$(date +%s)
