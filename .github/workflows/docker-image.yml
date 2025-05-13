@@ -17,7 +17,7 @@ jobs:
     - name: Build the front end Docker image
       run: 
         cd frontend
-        docker build . --file Dockerfile --tag latest:$(date +%s)
+        docker build . Dockerfile --tag latest:$(date +%s)
     
     - name: Build the Backend Docker image
       run: docker build . file /backend/Dockerfile --tag my-image-name:$(date +%s)
