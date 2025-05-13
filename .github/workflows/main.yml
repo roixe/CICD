@@ -11,7 +11,7 @@ jobs:
         name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
         name: Set up QEMU
@@ -26,3 +26,12 @@ jobs:
           file: ./frontend/Dockerfile
           push: true
           tags: user/app:latest
+
+      -
+        name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          file: ./backend/Dockerfile
+          push: true
+          tags: user/app:latest
+
